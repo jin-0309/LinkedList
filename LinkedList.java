@@ -79,6 +79,21 @@ public class LinkedList<T> {
         }
     }
 
+    public T getNodeAt(int index) {
+        if (index >= this.count || index < 0) {
+            System.out.println("범위를 넘어갔습니다.");
+            return null;
+        }
+
+        Node<T> currentNode = this.head;
+
+        for (int i=0; i<index; i++) {
+            currentNode = currentNode.next;
+        }
+
+        return currentNode.data;
+    }
+
     public void deleteLast() {
         this.deleteAt(this.count-1);
     }

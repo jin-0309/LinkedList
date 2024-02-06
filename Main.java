@@ -16,5 +16,11 @@ public class Main {
         intList.insertLast(13);
         intList.deleteLast();
         intList.printAll();
+        intList.insertLast(13);
+        intList.insertLast(14);
+        intList.insertLast(15);
+        System.out.println("=========index========");
+        intList.printAll();
+        System.out.println(intList.getNodeAt(3));
     }
 }
