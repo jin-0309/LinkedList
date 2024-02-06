@@ -50,6 +50,43 @@ public class LinkedList<T> {
         }
         this.count++;
     }
+
+    public void insertLast(T data) {
+        this.insertAt(this.count, data);
+    }
+
+    public T deleteAt(int index) {
+        if (index >= this.count || index < 0) {
+            System.out.println("제거할 수 없습니다.");
+            return null;
+        }
+
+        Node<T> currentNode = this.head;
+
+        if (index == 0) {
+            Node<T> deleteNode = this.head;
+            this.head = this.head.next;
+            this.count--;
+            return deleteNode.data;
+        } else {
+            for (int i=0; i< index-1; i++) {
+                currentNode = currentNode.next;
+            }
+            Node<T> deleteNode = currentNode.next;
+            currentNode.next = currentNode.next.next;
+            this.count--;
+            return deleteNode.data;
+        }
+    }
+
+    public void deleteLast() {
+        this.deleteAt(this.count-1);
+    }
+
+    public void clear() {
+        this.head = null;
+        this.count = 0;
+    }
 }
 
 class Node<T> {

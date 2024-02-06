@@ -6,5 +6,15 @@ public class Main {
         intList.insertAt(2, 3);
         intList.insertAt(3, 4);
         intList.printAll();
+        intList.clear();
+        intList.printAll();
+        intList.insertLast(10);
+        intList.insertLast(11);
+        intList.insertLast(12);
+        intList.deleteAt(1);
+        intList.deleteAt(0);
+        intList.insertLast(13);
+        intList.deleteLast();
+        intList.printAll();
     }
 }
